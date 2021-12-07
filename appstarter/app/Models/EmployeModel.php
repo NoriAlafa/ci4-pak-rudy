@@ -9,18 +9,5 @@ class EmployeModel extends Model{
     protected $db;  
     protected $table='employes'; 
     protected $primaryKey = 'id'; 
-
-    public function __construct() {         
-        parent:: __construct();         
-        //koneksikan ke database         
-        $this->db = db_connect();     
-    }
-    
-    public function getData()
-    {
-        // $query = "SELECT * FROM employes";
-        // $data  = $this->db->query($query)->getResultArray();
-        $builder=$this->db->table($this->table);         
-        return $data=$builder->get()->getResultArray();
-    }
+    protected $allowedFields = ['id' , 'nama' , 'alamat' , 'gender' , 'gaji'];
 }

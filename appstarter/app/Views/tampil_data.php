@@ -5,9 +5,9 @@
         <h2 align="center">
             CRUD Employe
             <br>
-            <a href="" align="center">Tambah Data</a>
+            <a href="/tambahdata">Tambah Data</a>
         </h2>     
-        <table border="1" align="center">         
+        <table border="1" align="center" class="yes-tbl">         
             <tr>             
                 <th>ID</th> 
                 <th>Nama</th>             
@@ -17,7 +17,7 @@
                 <th>Aksi</th>         
             </tr> 
             <?php foreach($employe as $row): ?>         
-                <tr>             
+                <tr class="tr-oke">             
                     <td><?= $row['id'];?></td>             
                     <td><?= $row['nama'];?></td>             
                     <td><?= $row['alamat'];?></td>             
@@ -25,7 +25,7 @@
                     <td><?= $row['gaji'];?></td>             
                     <td>edit | delete</td>         
                 </tr> 
-            <?php endforeach;?>     
+            <?php endforeach;?>    
         </table> 
     </div>
 <?=$this->endSection();?>

@@ -18,10 +18,29 @@ class Employe extends BaseController {
         // memasukan semua data dalam array         
         $data['judul']='CRUD Employe';          
         //memanggil fungsi dari model         
-        $data['employe']=$this->employeModel->getData();          
+        $data['employe']=$this->employeModel->findAll();          
         //Menampilkan hasil ke view         
         return view('tampil_data',$data);     
     } 
+
+    public function tambahdata(){
+        $data['judul']  =   "Tambah Data";
+        return view('tambah_data' , $data);
+    }
+
+    public function save(){
+        $data = [
+            'id'        => $this->request->getPost('id'),
+            'nama'      => $this->request->getPost('nama'),
+            'alamat'    => $this->request->getPost('alamat'),
+            'gender'    => $this->request->getPost('gender'),
+            'gaji'      => $this->request->getPost('gaji')
+        ];
+
+        $this->employeModel->insert($data);        
+        return redirect()->to('/employe');
+        
+    }
     
 
 }

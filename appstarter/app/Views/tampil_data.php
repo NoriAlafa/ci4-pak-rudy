@@ -2,7 +2,11 @@
 
 <?=$this->section('content');?>
     <div class="content">      
-        <h2 align="center">CRUD Employe</h2>     
+        <h2 align="center">
+            CRUD Employe
+            <br>
+            <a href="" align="center">Tambah Data</a>
+        </h2>     
         <table border="1" align="center">         
             <tr>             
                 <th>ID</th> 

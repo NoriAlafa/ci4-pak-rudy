@@ -23,7 +23,7 @@
                     <td><?= $row['alamat'];?></td>             
                     <td><?= $row['gender'];?></td>             
                     <td><?= $row['gaji'];?></td>             
-                    <td><a href="/employe/<?=$row['id'];?>/edit">edit</a> | delete</td>         
+                    <td><a href="/employe/<?=$row['id'];?>/edit">edit</a> | <a href="/employe/<?= $row['id'];?>/delete" onclick="returnconfirm('Apakah Yakin?')">delete</a></td>         
                 </tr> 
             <?php endforeach;?>    
         </table> 

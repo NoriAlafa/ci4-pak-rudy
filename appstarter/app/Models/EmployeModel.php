@@ -35,10 +35,10 @@ class EmployeModel extends Model{
     //     return $data = $builder->getWhere(['id' => $id])->getResultArray();
     // }
 
-    public function ubah($data , $key){
-        $builder=$this->db->table($this->table);
-        //ubah data dalam tabel
-        //update employe set field1, field2 WHERE id='$id'
-        $builder->update($data,$key);
-    }
+    // public function ubah($data , $key){
+    //     $builder=$this->db->table($this->table);
+    //     //ubah data dalam tabel
+    //     //update employe set field1, field2 WHERE id='$id'
+    //     return $builder->update($data,$key);
+    // }
 }

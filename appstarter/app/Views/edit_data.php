@@ -3,7 +3,7 @@
 <?=$this->section('content')?>
     <div class="content">
         <h2 align="center"><?=$judul?></h2>
-        <form method="POST" action="/employe/update">
+        <form method="post" action="/employe/update">
             <?= csrf_field(); ?>
             <input type="hidden" name="_method" value="put">
             <?php foreach($employe as $row):?>
@@ -33,10 +33,12 @@
                             </select>
                         </td>
                     </tr>
+
                     <tr>
                         <td>Gaji</td>
                         <td><input type="text" name="gaji" value="<?= $row['gaji'];?>"></td>
                     </tr>
+                    
                     <tr>
                         <td></td>
                         <td>

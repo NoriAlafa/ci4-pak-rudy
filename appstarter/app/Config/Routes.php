@@ -48,6 +48,10 @@ $routes->get('/kalkulator', 'Kalkulator::hitung');
 
 $routes->post('/hitung/proses', 'Kalkulator::proses');
 
+//untuk edit dan ubah
+$routes->get('/employe/(:any)/edit', 'Employe::edit/$1');
+$routes->put('/employe', 'Employe::update');
+
 
 
 /*

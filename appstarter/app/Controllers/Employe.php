@@ -41,6 +41,41 @@ class Employe extends BaseController {
         return redirect()->to('/employe');
         
     }
+
+    public function edit($id){
+        $data['judul']='Edit Employe';
+        //ambil data berdasarkan id yang dikirm
+
+        /*versi ori
+        tanpa embel embel orm
+        $data['employe']=$this->employeModel->getDataByID($id);
+        */
+
+        $data['employe']=$this->employeModel->where('id',$id)->findAll();
+        //tampilkan data di view
+        return view('edit_data',$data);
+    }
+
+    public function update(){
+        $data = [
+            'nama' => $this->request->getPost('nama'),
+            'alamat' => $this->request->getPost('alamat'),
+            'gender' => $this->request->getPost('gender'),
+            'gaji' => $this->request->getPost('gaji')
+        ];
+        //panggil fungsi ubah di model dan kirimkan datanya
+        
+        /*
+        versi ori
+        tanpa embel embel orm
+        $this->employeModel->ubah(['id' => $this->request->getPost('id')],$data);
+        */
+
+        $this->employeModel->ubah(['id' => $this->request->getPost('id')],$data);
+        //kembali ke table employe
+        return redirect()->to('/employe');
+    }
+    
     
 
 }

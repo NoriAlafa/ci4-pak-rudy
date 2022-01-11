@@ -6,7 +6,7 @@
         <form method="post" action="/employe/update">
             <?= csrf_field(); ?>
             <input type="hidden" name="_method" value="put">
-            <?php foreach($employe as $row):?>
+            <?php foreach($admin as $row):?>
                 <table align="center">
                     <tr>
                         <td>ID</td>

@@ -28,6 +28,12 @@ class Employe extends BaseController {
         return view('tambah_data' , $data);
     }
 
+    public function adminLogin(){
+        $data['judul']  =   "Login";
+        return view('admin_page' , $data);
+    }
+
+
     public function save(){
         $data = [
             'id'        => $this->request->getPost('id'),

@@ -44,7 +44,11 @@ $routes->get('/admin/crud', 'Admin::crud_admin');
 
 $routes->post('/employe', 'Employe::save');
 
+$routes->post('/admin/save', 'Admin::save');
+
 $routes->get('/tambahdata', 'Employe::tambahdata');
+
+$routes->get('/tambahdata/admin', 'Admin::create');
 
 $routes->get('/kalkulator', 'Kalkulator::hitung');
 

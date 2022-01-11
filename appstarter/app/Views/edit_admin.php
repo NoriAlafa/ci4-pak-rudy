@@ -10,13 +10,22 @@
                 <table align="center">
                     <tr>
                         <td>Username</td>
-                        <td><input type="text" name="id" value="<?= $row['username'];?>" >
-                        </td>
+                        <td><input type="email" name="username" value="<?= $row['username'];?>" ></td>
                     </tr>
 
                     <tr>
                         <td>Password</td>
-                        <td><input type="password" name="nama" value="<?= $row['password'];?>"></td>
+                        <td><input type="password" name="password" value="<?= $row['password'];?>"></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>
+                        <button type="submit">Update</button>
+                        <a href="/admin/crud">
+                        <button type="button">Cancel</button>
+                        </a>
+                        </td>
                     </tr>
                 </table>
             <?php endforeach; ?>

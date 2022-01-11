@@ -18,6 +18,7 @@ class Admin extends BaseController {
 
     public function crud_admin(){
         $data['judul']='CRUD Admin';
+        $data['admin']=$this->adminModel->findAll(); 
         return view('crud_admin',$data);
     }
 
@@ -112,7 +113,7 @@ class Admin extends BaseController {
     public function save(){
         $data = [
             'username'        => $this->request->getPost('username'),
-            'password'      => $this->request->getPost('password')
+            'password'      => password_hash($this->request->getPost('password'),PASSWORD_BCRYPT)
             
         ];
 
@@ -130,7 +131,7 @@ class Admin extends BaseController {
         $data['employe']=$this->employeModel->getDataByID($id);
         */
 
-        $data['admin']=$this->adminModel->where('id',$id)->findAll();
+        $data['admin']=$this->adminModel->where('id_admin',$id)->findAll();
         //tampilkan data di view
         return view('edit_admin',$data);
     }
@@ -148,7 +149,7 @@ class Admin extends BaseController {
         $this->employeModel->ubah(['id' => $this->request->getPost('id')],$data);
         */
 
-        $this->adminModel->update(['id' => $this->request->getPost('id')],$data);
+        $this->adminModel->update(['id_admin' => $this->request->getPost('id_admin')],$data);
         //kembali ke table employe
         return redirect()->to('/admin/crud');
     }
@@ -158,6 +159,11 @@ class Admin extends BaseController {
         $this->adminModel->delete($id);
         //kembali ke table employe
         return redirect()->to('/admin/crud');
+    }
+
+    public function create(){
+        $data['judul']  =   "Tambah Data";
+        return view('tambah_admin' , $data);
     }
         
 }

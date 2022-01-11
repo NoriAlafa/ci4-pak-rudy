@@ -2,17 +2,26 @@
 <?= $this->section('content'); ?> 
 <div class="content">      
     <h2 align="center"><?= $judul; ?></h2>     
-    <form action="/employe" method="post">     
+    <form action="/admin/save" method="post">     
         <?= csrf_field(); ?> 
         <table align="center">             
             <tr>                 
-                <td>ID</td>                 
-                <td><input type="text" name="id"></td>             
+                <td>Username</td>                 
+                <td><input type="email" name="username" ></td>             
             </tr>             
             <tr>                 
-                <td>Nama</td>                 
-                <td><input type="text" name="nama"></td>            
-            </tr>                    
+                <td>Password</td>                 
+                <td><input type="password" name="password"></td>            
+            </tr>    
+            <tr>                 
+                <td></td>                 
+                <td>                     
+                    <button type="submit">Save</button>                     
+                    <a href="/admin/crud">                         
+                    <button type="button">Cancel</button>                     
+                    </a>                 
+                </td>             
+            </tr>                  
         </table>     
     </form> 
 </div>  

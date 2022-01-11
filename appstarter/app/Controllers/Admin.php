@@ -60,7 +60,7 @@ class Admin extends BaseController {
         $data=[
             'username' => $this->request->getPost('username'),
             //enkripsi password dengan BCRYPT
-            'password' => password_hash($this->request->getPost('password'),PASSWORD_BCRYPT)
+            'password' => $this->request->getPost('password')
         ];
 
         //memasukan data dalam database
@@ -93,8 +93,8 @@ class Admin extends BaseController {
             'logged_in' =>true
             ]);
         //masukan ke laman crud employe
-            return redirect()->to('/admin/crud');
             }
+            return redirect()->to('/dashboard/about');
         } 
         else { 
             //jika salah
@@ -113,7 +113,7 @@ class Admin extends BaseController {
     public function save(){
         $data = [
             'username'        => $this->request->getPost('username'),
-            'password'      => password_hash($this->request->getPost('password'),PASSWORD_BCRYPT)
+            'password'      => $this->request->getPost('password')
             
         ];
 

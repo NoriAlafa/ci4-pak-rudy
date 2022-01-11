@@ -9,6 +9,12 @@
             <?php foreach($admin as $row):?>
                 <table align="center">
                     <tr>
+                        <td>ID</td>
+                        <td><input type="text" name="id_admin" value="<?= $row['id_admin'];?>" readonly>
+                        </td>
+                    </tr>
+
+                    <tr>
                         <td>Username</td>
                         <td><input type="email" name="username" value="<?= $row['username'];?>" ></td>
                     </tr>

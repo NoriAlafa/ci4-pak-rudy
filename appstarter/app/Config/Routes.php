@@ -65,6 +65,7 @@ $routes->get('/employe/(:any)/edit', 'Employe::edit/$1');
 $routes->put('/employe/update', 'Employe::update');
 
 $routes->get('/admin/(:any)/edit', 'Admin::edit/$1');
+
 $routes->put('/admin/update', 'Admin::update');
 
 $routes->get('/logout', 'Admin::logout');

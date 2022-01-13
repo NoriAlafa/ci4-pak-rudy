@@ -6,6 +6,7 @@
         <li><a href="/kalkulator">Kalkulator</a></li>
         <li><a href="/employe">Employe</a></li>
         <li><a href="/admin/crud">Admin</a></li>
+        <li><a href="/division">Division</a></li>
         <li><a href="/logout">Logout</a></li>
     </ul>
 </div>

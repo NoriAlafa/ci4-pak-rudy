@@ -94,7 +94,7 @@ class Admin extends BaseController {
             ]);
         //masukan ke laman crud employe
             }
-            return redirect()->to('/dashboard/about');
+            return redirect()->to('/employe');
         } 
         else { 
             //jika salah

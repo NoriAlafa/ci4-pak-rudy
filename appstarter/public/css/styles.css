@@ -3,7 +3,7 @@ body {
   background-color: lightgray;
   }
   .container {
-  width: 800px;
+  width: 1250px;
   margin: auto;
   background-color: white;
   }
@@ -41,7 +41,7 @@ body {
   height: 100%;
   padding-top: 10px;
   padding-left: 10px;
-  padding-right: 5px;
+  padding-right: 75px;
   border: 0.5px solid skyblue;
   }
   .nav li {

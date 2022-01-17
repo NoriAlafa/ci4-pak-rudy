@@ -55,14 +55,16 @@ $routes->get('/employe/(:any)/delete', 'Employe::destroy/$1');
 $routes->get('/admin/crud', 'Admin::crud_admin');
 $routes->post('/admin/save', 'Admin::save');
 $routes->get('/tambahdata/admin', 'Admin::create');
-$routes->post('/cek_login','Admin::cek_login');
-$routes->post('/login','Admin::login');
-$routes->post('/daftar', 'Admin::register');
 $routes->get('/admin/(:any)/edit', 'Admin::edit/$1');
 $routes->put('/admin/update', 'Admin::update');
-$routes->get('/logout', 'Admin::logout');
 $routes->get('/admin/(:any)/delete', 'Admin::destroy/$1');
 
+//auth
+$routes->post('/cek_login','Auth::cek_login');
+$routes->get('/login','Auth::login');
+$routes->get('/register', 'Auth::index');
+$routes->post('/daftar', 'Auth::register');
+$routes->get('/logout', 'Auth::logout');
 
 // division
 $routes->get('/division', 'Division::index');

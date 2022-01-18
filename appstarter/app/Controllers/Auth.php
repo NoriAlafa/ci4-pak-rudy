@@ -92,7 +92,7 @@ class Auth extends BaseController
             ]);
             
             //masukan ke laman crud employe
-            return redirect()->to('/employe');
+            return redirect()->to('/dashboard');
             }
           
             else { 

@@ -38,26 +38,24 @@ $routes->get('/dashboard/gallery', 'Dashboard::gallery');
 $routes->get('/dashboard/about', 'Dashboard::about');
 
 $routes->get('/user', 'Home::index');
-
-// employe
-$routes->get('/employe', 'Employe::index');
-$routes->post('/employe', 'Employe::save');
-$routes->get('/tambahdata', 'Employe::tambahdata');
 $routes->get('/kalkulator', 'Kalkulator::hitung');
 $routes->post('/hitung/proses', 'Kalkulator::proses');
-//untuk edit dan ubah
-$routes->get('/employe/(:any)/edit', 'Employe::edit/$1');
-$routes->put('/employe/update', 'Employe::update');
-//untuk delete
-$routes->get('/employe/(:any)/delete', 'Employe::destroy/$1');
+
+// employe
+$routes->get('/employe', 'Employe::index' , ['filter'=>'auth']);
+$routes->post('/employe', 'Employe::save', ['filter'=>'auth']);
+$routes->get('/tambahdata', 'Employe::tambahdata', ['filter'=>'auth']);
+$routes->get('/employe/(:any)/edit', 'Employe::edit/$1', ['filter'=>'auth']);
+$routes->put('/employe/update', 'Employe::update', ['filter'=>'auth']);
+$routes->get('/employe/(:any)/delete', 'Employe::destroy/$1', ['filter'=>'auth']);
 
 // admin
-$routes->get('/admin/crud', 'Admin::crud_admin');
-$routes->post('/admin/save', 'Admin::save');
-$routes->get('/tambahdata/admin', 'Admin::create');
-$routes->get('/admin/(:any)/edit', 'Admin::edit/$1');
-$routes->put('/admin/update', 'Admin::update');
-$routes->get('/admin/(:any)/delete', 'Admin::destroy/$1');
+$routes->get('/admin/crud', 'Admin::crud_admin', ['filter'=>'auth']);
+$routes->post('/admin/save', 'Admin::save', ['filter'=>'auth']);
+$routes->get('/tambahdata/admin', 'Admin::create', ['filter'=>'auth']);
+$routes->get('/admin/(:any)/edit', 'Admin::edit/$1', ['filter'=>'auth']);
+$routes->put('/admin/update', 'Admin::update', ['filter'=>'auth']);
+$routes->get('/admin/(:any)/delete', 'Admin::destroy/$1', ['filter'=>'auth']);
 
 //auth
 $routes->post('/cek_login','Auth::cek_login');
@@ -67,13 +65,12 @@ $routes->post('/daftar', 'Auth::register');
 $routes->get('/logout', 'Auth::logout');
 
 // division
-$routes->get('/division', 'Division::index');
-$routes->post('/division/save', 'Division::save');
-$routes->get('/tambahdata/division', 'Division::create');
-$routes->get('/division/(:any)/edit', 'Division::edit/$1');
-$routes->put('/division/update', 'Division::update');
-//untuk delete
-$routes->get('/division/(:any)/delete', 'Division::destroy/$1');
+$routes->get('/division', 'Division::index', ['filter'=>'auth']);
+$routes->post('/division/save', 'Division::save', ['filter'=>'auth']);
+$routes->get('/tambahdata/division', 'Division::create', ['filter'=>'auth']);
+$routes->get('/division/(:any)/edit', 'Division::edit/$1', ['filter'=>'auth']);
+$routes->put('/division/update', 'Division::update', ['filter'=>'auth']);
+$routes->get('/division/(:any)/delete', 'Division::destroy/$1', ['filter'=>'auth']);
 
 
 

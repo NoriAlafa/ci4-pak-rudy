@@ -34,6 +34,7 @@ body {
   border: 0.5px solid navy;
   background-color: navy;
   padding: 10px;
+    
   }
   .content {
   margin-left: 5px;
@@ -62,4 +63,5 @@ body {
 
   .yes-tbl{
     text-align: center;
+  
   }

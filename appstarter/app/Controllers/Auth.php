@@ -90,16 +90,21 @@ class Auth extends BaseController
             'username' => $username,
             'logged_in' =>true
             ]);
-        //masukan ke laman crud employe
-            }
+            
+            //masukan ke laman crud employe
             return redirect()->to('/employe');
-        } 
-        else { 
-            //jika salah
-            //kembali ke login dan berikan pesan error
-            session()->setFlashdata('error', 'Username & Password Salah');
+            }
+          
+            else { 
+                //jika salah
+                //kembali ke login dan berikan pesan error
+                session()->setFlashdata('error', 'Username & Password Salah');
+                return redirect()->back();
+            }
+        }else{
+            session()->setFlashdata('error', 'Username tidak ditemukan');
             return redirect()->back();
-        }
+        } 
     }
 
     public function logout() {
